@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,13 @@ namespace MVVM_Demo
         {
             InitializeComponent();
             
+        }
+
+        private void BTNSpeichern_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindowViewModel.PersonList.Add(new Person() { Name = TBName.Text, Vorname = TBVorname.Text });
+
+            Debug.Print(MainWindowViewModel.PersonList.Count.ToString());
         }
     }
 
